@@ -13,8 +13,9 @@ TODO
 11) add actual use template functionality
 12) add proper analytics with real data
 13) enable search functionality in list forms
-14) add functionaality where user can start filling a form directly from published forms page
+14) add functionality where user can start filling a form directly from published forms page
 15) add sharing forms with a link functionality
 16) add timer
 17) add a sequence diagram for the whole infrastructure
-18) add comparison with google forms for analytics 
+18) add comparison with google forms for analytics
+19) make a product page for the project
