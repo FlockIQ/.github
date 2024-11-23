@@ -3,9 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>FlockIQ - Smarter Forms, Deeper Insights</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <style>
+        .bg-custom {
+            background-color: #111827;
+        }
+    </style>
 </head>
-<body>
-    <h1>Hello, World!</h1>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="border-b border-zinc-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 bg-white rounded-md flex items-center justify-center">
+                        <span class="text-black font-bold">FQ</span>
+                    </div>
+                    <span class="font-bold text-xl">FlockIQ</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#features" class="text-zinc-400 hover:text-white transition-colors">Features</a>
+                    <a href="#analytics" class="text-zinc-400 hover:text-white transition-colors">Analytics</a>
+                    <a href="/about" class="text-zinc-400 hover:text-white transition-colors">About</a>
+                    <button class="px-4 py-2 border border-zinc-700 rounded-md hover:bg-zinc-800 transition-colors">
+                        Login
+                    </button>
+                    <button class="px-4 py-2 bg-white text-black rounded-md hover:bg-zinc-200 transition-colors">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-24">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-6 leading-tight">
+                Forms Evolved with Intelligence
+            </h1>
+            <p class="text-xl text-zinc-400 mb-8">
+                The simplicity of Google Forms meets the power of advanced analytics.
+                Built for teams who need deeper insights.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <button class="px-6 py-3 bg-white text-black rounded-md hover:bg-zinc-200 transition-colors flex items-center">
+                    Start Free Trial 
+                    <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                </button>
+                <button class="px-6 py-3 border border-zinc-700 rounded-md hover:bg-zinc-800 transition-colors">
+                    View Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="container mx-auto px-4 py-24 border-t border-zinc-800" id="features">
+        <h2 class="text-3xl font-bold text-center mb-16">Why Choose FlockIQ?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <i data-feather="clock" class="h-12 w-12 mb-4 text-white"></i>
+                <h3 class="text-xl font-bold mb-2">Response Time Analytics</h3>
+                <p class="text-zinc-400">
+                    Track how long users spend on each question and identify bottlenecks
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <i data-feather="brain" class="h-12 w-12 mb-4 text-white"></i>
+                <h3 class="text-xl font-bold mb-2">Sentiment Analysis</h3>
+                <p class="text-zinc-400">
+                    Automatically analyze open-ended responses for sentiment and key themes
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <i data-feather="users" class="h-12 w-12 mb-4 text-white"></i>
+                <h3 class="text-xl font-bold mb-2">Demographic Insights</h3>
+                <p class="text-zinc-400">
+                    Understand your audience with comprehensive demographic breakdowns
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Preview -->
+    <section class="container mx-auto px-4 py-24 border-t border-zinc-800" id="analytics">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Advanced Analytics Dashboard</h2>
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold">Sentiment Analysis</h3>
+                    <div class="flex space-x-4">
+                        <button class="px-4 py-2 bg-zinc-800 rounded-md text-white hover:bg-zinc-700">Daily</button>
+                        <button class="px-4 py-2 bg-zinc-800 rounded-md text-white hover:bg-zinc-700">Weekly</button>
+                        <button class="px-4 py-2 bg-zinc-800 rounded-md text-white hover:bg-zinc-700">Monthly</button>
+                    </div>
+                </div>
+                <div class="h-64 bg-zinc-800 rounded-lg flex items-center justify-center">
+                    <span class="text-zinc-500">Analytics Dashboard Preview</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-24 border-t border-zinc-800">
+        <div class="bg-white text-black max-w-3xl mx-auto rounded-lg p-12 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Forms?</h2>
+            <p class="text-zinc-600 text-lg mb-8">
+                Join thousands of organizations making better decisions with FlockIQ
+            </p>
+            <button class="px-8 py-4 bg-black text-white rounded-md hover:bg-zinc-800 transition-colors flex items-center mx-auto">
+                Get Started Free
+                <i data-feather="arrow-up-right" class="ml-2 h-4 w-4"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="h-8 w-8 bg-white rounded-md flex items-center justify-center">
+                            <span class="text-black font-bold">FQ</span>
+                        </div>
+                        <span class="font-bold">FlockIQ</span>
+                    </div>
+                    <p class="text-zinc-400">Making forms smarter, insights deeper.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-zinc-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-zinc-400 hover:text-white">Analytics</a></li>
+                        <li><a href="#" class="text-zinc-400 hover:text-white">Enterprise</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-zinc-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-zinc-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-zinc-400 hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-zinc-400 hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="text-zinc-400 hover:text-white">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-zinc-800 mt-12 pt-8 text-center text-zinc-400">
+                <p>&copy; 2024 FlockIQ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
 </body>
 </html>
