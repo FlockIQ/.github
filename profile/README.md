@@ -1,5 +1,8 @@
 Google forms clone with advanced analytics and features; Capstone project for my undergrad CS course.
 
+- domain by name.com
+- smtp set up on mailgun  
+
 TODO
 1) add ai and vector embeddings for fast querying 
 2) add signin with google
