@@ -4,175 +4,395 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlockIQ - Smarter Forms, Deeper Insights</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.css"></script>
     <style>
-        .bg-custom {
-            background-color: #111827;
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background-color: #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-box {
+            background: white;
+            color: black;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* Buttons */
+        .button {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .button-outline {
+            border: 1px solid #333;
+            color: white;
+            background: transparent;
+        }
+
+        .button-outline:hover {
+            background: #333;
+        }
+
+        .button-primary {
+            background: white;
+            color: black;
+            border: none;
+        }
+
+        .button-primary:hover {
+            background: #e5e5e5;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #888;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .feature-card p {
+            color: #888;
+        }
+
+        /* Analytics Section */
+        .analytics {
+            padding: 6rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .analytics-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .analytics-demo {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .cta-card {
+            background: white;
+            color: black;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .cta-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #333;
+            padding: 4rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #888;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
-<body class="bg-black text-white">
-    <!-- Navigation -->
-    <nav class="border-b border-zinc-800">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div class="h-8 w-8 bg-white rounded-md flex items-center justify-center">
-                        <span class="text-black font-bold">FQ</span>
-                    </div>
-                    <span class="font-bold text-xl">FlockIQ</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#features" class="text-zinc-400 hover:text-white transition-colors">Features</a>
-                    <a href="#analytics" class="text-zinc-400 hover:text-white transition-colors">Analytics</a>
-                    <a href="/about" class="text-zinc-400 hover:text-white transition-colors">About</a>
-                    <button class="px-4 py-2 border border-zinc-700 rounded-md hover:bg-zinc-800 transition-colors">
-                        Login
-                    </button>
-                    <button class="px-4 py-2 bg-white text-black rounded-md hover:bg-zinc-200 transition-colors">
-                        Get Started
-                    </button>
-                </div>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <div class="logo-box">FQ</div>
+                <span>FlockIQ</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#analytics">Analytics</a>
+                <a href="/about">About</a>
+                <a href="/login" class="button button-outline">Login</a>
+                <a href="/signup" class="button button-primary">Get Started</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="container mx-auto px-4 py-24">
-        <div class="max-w-3xl mx-auto text-center">
-            <h1 class="text-5xl font-bold mb-6 leading-tight">
-                Forms Evolved with Intelligence
-            </h1>
-            <p class="text-xl text-zinc-400 mb-8">
+    <section class="hero">
+        <div class="container">
+            <h1>Forms Evolved with Intelligence</h1>
+            <p>
                 The simplicity of Google Forms meets the power of advanced analytics.
                 Built for teams who need deeper insights.
             </p>
-            <div class="flex justify-center space-x-4">
-                <button class="px-6 py-3 bg-white text-black rounded-md hover:bg-zinc-200 transition-colors flex items-center">
-                    Start Free Trial 
-                    <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
-                </button>
-                <button class="px-6 py-3 border border-zinc-700 rounded-md hover:bg-zinc-800 transition-colors">
-                    View Demo
-                </button>
+            <div class="button-group">
+                <a href="/signup" class="button button-primary">Start Free Trial</a>
+                <a href="/demo" class="button button-outline">View Demo</a>
             </div>
         </div>
     </section>
 
-    <!-- Features Grid -->
-    <section class="container mx-auto px-4 py-24 border-t border-zinc-800" id="features">
-        <h2 class="text-3xl font-bold text-center mb-16">Why Choose FlockIQ?</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-                <i data-feather="clock" class="h-12 w-12 mb-4 text-white"></i>
-                <h3 class="text-xl font-bold mb-2">Response Time Analytics</h3>
-                <p class="text-zinc-400">
-                    Track how long users spend on each question and identify bottlenecks
-                </p>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-                <i data-feather="brain" class="h-12 w-12 mb-4 text-white"></i>
-                <h3 class="text-xl font-bold mb-2">Sentiment Analysis</h3>
-                <p class="text-zinc-400">
-                    Automatically analyze open-ended responses for sentiment and key themes
-                </p>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-                <i data-feather="users" class="h-12 w-12 mb-4 text-white"></i>
-                <h3 class="text-xl font-bold mb-2">Demographic Insights</h3>
-                <p class="text-zinc-400">
-                    Understand your audience with comprehensive demographic breakdowns
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Analytics Preview -->
-    <section class="container mx-auto px-4 py-24 border-t border-zinc-800" id="analytics">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">Advanced Analytics Dashboard</h2>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold">Sentiment Analysis</h3>
-                    <div class="flex space-x-4">
-                        <button class="px-4 py-2 bg-zinc-800 rounded-md text-white hover:bg-zinc-700">Daily</button>
-                        <button class="px-4 py-2 bg-zinc-800 rounded-md text-white hover:bg-zinc-700">Weekly</button>
-                        <button class="px-4 py-2 bg-zinc-800 rounded-md text-white hover:bg-zinc-700">Monthly</button>
-                    </div>
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose FlockIQ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Response Time Analytics</h3>
+                    <p>Track how long users spend on each question and identify bottlenecks in your forms.</p>
                 </div>
-                <div class="h-64 bg-zinc-800 rounded-lg flex items-center justify-center">
-                    <span class="text-zinc-500">Analytics Dashboard Preview</span>
+                <div class="feature-card">
+                    <h3>Sentiment Analysis</h3>
+                    <p>Automatically analyze open-ended responses for sentiment and key themes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Demographic Insights</h3>
+                    <p>Understand your audience with comprehensive demographic breakdowns.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="container mx-auto px-4 py-24 border-t border-zinc-800">
-        <div class="bg-white text-black max-w-3xl mx-auto rounded-lg p-12 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Forms?</h2>
-            <p class="text-zinc-600 text-lg mb-8">
-                Join thousands of organizations making better decisions with FlockIQ
-            </p>
-            <button class="px-8 py-4 bg-black text-white rounded-md hover:bg-zinc-800 transition-colors flex items-center mx-auto">
-                Get Started Free
-                <i data-feather="arrow-up-right" class="ml-2 h-4 w-4"></i>
-            </button>
+    <section class="analytics" id="analytics">
+        <div class="container">
+            <div class="analytics-content">
+                <h2>Advanced Analytics Dashboard</h2>
+                <div class="analytics-demo">
+                    Analytics Dashboard Preview
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-zinc-800 py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="h-8 w-8 bg-white rounded-md flex items-center justify-center">
-                            <span class="text-black font-bold">FQ</span>
-                        </div>
-                        <span class="font-bold">FlockIQ</span>
-                    </div>
-                    <p class="text-zinc-400">Making forms smarter, insights deeper.</p>
+    <section class="cta">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to Transform Your Forms?</h2>
+                <p>Join thousands of organizations making better decisions with FlockIQ</p>
+                <a href="/signup" class="button button-primary">Get Started Free</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="/" class="logo">
+                        <div class="logo-box">FQ</div>
+                        <span>FlockIQ</span>
+                    </a>
+                    <p>Making forms smarter, insights deeper.</p>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Product</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-zinc-400 hover:text-white">Features</a></li>
-                        <li><a href="#" class="text-zinc-400 hover:text-white">Analytics</a></li>
-                        <li><a href="#" class="text-zinc-400 hover:text-white">Enterprise</a></li>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#analytics">Analytics</a></li>
+                        <li><a href="/enterprise">Enterprise</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-zinc-400 hover:text-white">About</a></li>
-                        <li><a href="#" class="text-zinc-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-zinc-400 hover:text-white">Careers</a></li>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/careers">Careers</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-zinc-400 hover:text-white">Privacy</a></li>
-                        <li><a href="#" class="text-zinc-400 hover:text-white">Terms</a></li>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/terms">Terms</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-zinc-800 mt-12 pt-8 text-center text-zinc-400">
+            <div class="footer-bottom">
                 <p>&copy; 2024 FlockIQ. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Initialize Feather Icons
-        feather.replace();
-    </script>
 </body>
 </html>
