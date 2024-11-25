@@ -21,3 +21,4 @@ TODO
 18) add comparison with google forms for analytics
 19) make a product page for the project
 20) add better messages on the login/signup page - try to show the responses coming from mailgun to the user as well (eg. email doesnt exist)
+21) shift form filling to st.experimental_dialogues
