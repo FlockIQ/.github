@@ -1,11 +1,12 @@
 Google forms clone with advanced analytics and features; Capstone project for my undergrad CS course.
 
+- domain by name.com
+- smtp set up on mailgun  
+
 TODO
 1) add ai and vector embeddings for fast querying 
 2) add signin with google
-3) enable smtp
 4) add captcha
-5) add email ver
 6) make supabase session handling work throughout the app instead of relying on st.session_state
 8) implement rls and dls in supabase tables
 9) add functionality to edit forms and responses
@@ -19,3 +20,4 @@ TODO
 17) add a sequence diagram for the whole infrastructure
 18) add comparison with google forms for analytics
 19) make a product page for the project
+20) add better messages on the login/signup page - try to show the responses coming from mailgun to the user as well (eg. email doesnt exist)
