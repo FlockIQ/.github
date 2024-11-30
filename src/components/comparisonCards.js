@@ -71,7 +71,7 @@ const ComparisonCards = () => {
               </span>
               {dropdown.flockiq === index && (
                 <div className="feature-dropdown">
-                  <img
+                  <Image
                     src={feature.img} // Correct path to image
                     alt={feature.title}
                     className="feature-img"
@@ -100,7 +100,7 @@ const ComparisonCards = () => {
               </span>
               {dropdown.googleForms === index && (
                 <div className="feature-dropdown">
-                  <img
+                  <Image
                     src={feature.img} // Correct path to image
                     alt={feature.title}
                     className="feature-img"
