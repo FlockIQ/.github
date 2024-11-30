@@ -1,68 +1,58 @@
-import React from 'react';
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-export default function Features() {
+const FeatureSection = () => {
+  const features = [
+    { id: 1, title: "Advanced Analytics", description: "Gain deep insights into user responses with visual data." },
+    { id: 2, title: "Conditional Logic", description: "Show or hide questions dynamically based on user inputs." },
+    { id: 3, title: "Collaborative Editing", description: "Edit forms simultaneously with your team." },
+    { id: 4, title: "Custom Branding", description: "Customize your forms with logos and themes." },
+    { id: 5, title: "Password Protection", description: "Secure your forms with password protection." },
+  ];
+
   return (
-    <section className="features py-24 bg-[var(--background)]">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center text-[var(--foreground)] mb-12">
-          Why Choose FlockIQ?
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Feature 1: Advanced Analytics */}
-          <div className="feature-card bg-black text-white p-6 rounded-lg shadow-md border-2 border-white transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500">
-            <div className="mb-4">
-              <i className="fas fa-chart-line text-4xl text-blue-500"></i>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Advanced Analytics</h3>
-            <p className="text-gray-400">Gain deeper insights into user responses with advanced data analysis tools. Visualize your data with charts, graphs, and reports.</p>
-          </div>
+    <div className="feature-section">
+       <hr className="section-divider" />
+      <h2 className="feature-heading">Features</h2>
 
-          {/* Feature 2: AI-Prompt-Generated Survey Forms */}
-          <div className="feature-card bg-black text-white p-6 rounded-lg shadow-md border-2 border-white transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-green-500">
-            <div className="mb-4">
-              <i className="fas fa-robot text-4xl text-green-500"></i>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">AI-Prompt-Generated Survey Forms</h3>
-            <p className="text-gray-400">Leverage the power of AI to automatically generate survey questions and forms based on your prompts. Simply provide a goal, and FlockIQ will create a tailored survey for you!</p>
-          </div>
-
-          {/* Feature 3: Collaborative Editing */}
-          <div className="feature-card bg-black text-white p-6 rounded-lg shadow-md border-2 border-white transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500">
-            <div className="mb-4">
-              <i className="fas fa-users-cog text-4xl text-purple-500"></i>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Collaborative Editing</h3>
-            <p className="text-gray-400">Allow multiple team members to edit and review forms simultaneously, making collaboration seamless and efficient.</p>
-          </div>
-
-          {/* Feature 4: Multimedia Support */}
-          <div className="feature-card bg-black text-white p-6 rounded-lg shadow-md border-2 border-white transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-500">
-            <div className="mb-4">
-              
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Multimedia Support</h3>
-            <p className="text-gray-400">Add images, videos, and custom design elements to make your surveys more engaging and interactive. Offer a richer experience to your respondents.</p>
-          </div>
-
-          {/* Feature 5: Built-in Reporting */}
-          <div className="feature-card bg-black text-white p-6 rounded-lg shadow-md border-2 border-white transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-red-500">
-            <div className="mb-4">
-              <i className="fas fa-file-alt text-4xl text-red-500"></i>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Built-in Reporting</h3>
-            <p className="text-gray-400">Automatically generate reports from your survey data. Export reports in various formats (PDF, Excel) for quick and easy analysis.</p>
-          </div>
-
-          {/* Feature 6: Custom Branding */}
-          <div className="feature-card bg-black text-white p-6 rounded-lg shadow-md border-2 border-white transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-teal-500">
-            <div className="mb-4">
-              
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Custom Branding</h3>
-            <p className="text-gray-400">Remove all platform branding and apply your custom logos and designs. Make your surveys truly your own with full branding flexibility.</p>
-          </div>
+      {features.map((feature) => (
+        <div key={feature.id} className="feature-container">
+          <motion.div
+            className="feature-box"
+            whileHover="hover"
+            initial="rest"
+            animate="rest"
+            variants={{
+              rest: { backgroundColor: "#1c1c1c" },
+              hover: { backgroundColor: "#1c1c1c" },
+            }}
+          >
+            <motion.div
+              className="text-wrapper"
+              variants={{
+                rest: { x: 0, opacity: 1 },
+                hover: { x: "-100%", opacity: 0 },
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              {feature.title}
+            </motion.div>
+            <motion.div
+              className="text-wrapper description"
+              variants={{
+                rest: { x: "100%", opacity: 0 },
+                hover: { x: 0, opacity: 1 },
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              {feature.description}
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
   );
-}
+};
+
+export default FeatureSection;

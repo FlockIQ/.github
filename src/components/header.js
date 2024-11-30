@@ -49,10 +49,10 @@ export default function Header() {
   <a href="/about" className="text-gray-400 hover:text-white transition">
     About
   </a>
-  <Link href="/auth/signin" className="border border-gray-500 text-gray-400 hover:text-white px-6 py-2 rounded-lg transition">
+  <Link href="http://flockiq.streamlit.app/" className="border border-gray-500 text-gray-400 hover:text-white px-6 py-2 rounded-lg transition">
     Login
   </Link>
-  <a href="/signup" className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition">
+  <a href="http://flockiq.streamlit.app/" className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition">
     Get Started
   </a>
 </div>

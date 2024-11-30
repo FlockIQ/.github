@@ -6,6 +6,7 @@ import Analytics from '@/components/analytics';
 import CTA from '@/components/cta';
 import Footer from '@/components/footer';
 import UserFeedback from '@/components/userfeedback';
+import Workflow from '@/components/workflow';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
-      <Analytics />
+      <Workflow/>
       <CTA />
       <UserFeedback />
       <Footer />
